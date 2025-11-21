@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: voltx-production-final
+    env: docker
+    plan: starter
+    autoDeploy: true
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ENABLE_LIVE
+        value: "false"
+      # Add secrets in Render dashboard (do NOT put them in repo)
+      # - key: BINANCE_API_KEY
+      #   sync: false
+      # - key: BINANCE_API_SECRET
+      #   sync: false
